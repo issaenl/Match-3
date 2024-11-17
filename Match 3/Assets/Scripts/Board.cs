@@ -2,19 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GameState
+{
+    wait,
+    move
+}
+
 public class Board : MonoBehaviour
 {
+    public GameState currentState = GameState.move;
     public int width;
     public int height;
     public int offSet;
     public GameObject tilePrefab;
     public GameObject[] dots;
-    private BackgroundTile[,] allTiles;
     public GameObject[,] allDots;
+    private BackgroundTile[,] allTiles;
+    private FindMatches findMatches;
+    
     
     // Start is called before the first frame update
     void Start()
     {
+        findMatches = FindObjectOfType<FindMatches>();
         allTiles = new BackgroundTile[width, height];
         allDots =  new GameObject[width, height];
         SetUp();
@@ -85,6 +95,7 @@ public class Board : MonoBehaviour
     {
         if (allDots[column, row].GetComponent<Element>().isMatched)
         {
+            findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
             allDots[column, row] = null;
         }
@@ -136,7 +147,7 @@ public class Board : MonoBehaviour
             {
                 if (allDots[i, j] == null)
                 {
-                    Vector2 tempPosition = new Vector2(i, j);
+                    Vector2 tempPosition = new Vector2(i, j + offSet);
                     int dotToUse = Random.Range(0, dots.Length);
                     GameObject dot = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
                     allDots[i, j] = dot;
@@ -174,5 +185,7 @@ public class Board : MonoBehaviour
             yield return new WaitForSeconds(.4f);
             DestroyMatches();
         }
+        yield return new WaitForSeconds(.4f);
+        currentState = GameState.move;
     }
 }
