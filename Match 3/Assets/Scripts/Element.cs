@@ -39,7 +39,7 @@ public class Element : MonoBehaviour
         if(isMatched)
         {
             SpriteRenderer mySprite = GetComponent<SpriteRenderer>();
-            mySprite.color = new Color(1f, 1f, 1f, .4f);
+            mySprite.color = Color.grey;
         }
         targetX = column;
         targetY = row;

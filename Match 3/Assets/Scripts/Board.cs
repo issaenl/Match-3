@@ -17,6 +17,7 @@ public class Board : MonoBehaviour
     public GameObject tilePrefab;
     public GameObject[] dots;
     public GameObject[,] allDots;
+    public GameObject destroyEffect;
     private BackgroundTile[,] allTiles;
     private FindMatches findMatches;
     
@@ -96,6 +97,8 @@ public class Board : MonoBehaviour
         if (allDots[column, row].GetComponent<Element>().isMatched)
         {
             findMatches.currentMatches.Remove(allDots[column, row]);
+            GameObject particle = Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
+            Destroy(particle, .5f);
             Destroy(allDots[column, row]);
             allDots[column, row] = null;
         }
@@ -135,7 +138,7 @@ public class Board : MonoBehaviour
             }
             nullCount = 0;
         }
-        yield return new WaitForSeconds(.4f);
+        yield return new WaitForSeconds(.5f);
         StartCoroutine(FillBoardCo());
     }
 
@@ -179,13 +182,13 @@ public class Board : MonoBehaviour
     private IEnumerator FillBoardCo()
     {
         RefillBoard();
-        yield return new WaitForSeconds(.4f);
+        yield return new WaitForSeconds(.5f);
         while(MatchesOnBoard())
         {
-            yield return new WaitForSeconds(.4f);
+            yield return new WaitForSeconds(.5f);
             DestroyMatches();
         }
-        yield return new WaitForSeconds(.4f);
+        yield return new WaitForSeconds(.5f);
         currentState = GameState.move;
     }
 }
