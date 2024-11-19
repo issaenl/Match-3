@@ -18,6 +18,8 @@ public class Element : MonoBehaviour
     public GameObject rowArrow;
     public GameObject columnArrow;
     public GameObject otherDot;
+    public bool isColorBomb;
+    public GameObject colorBomb;
     private FindMatches findMatches;
     private Board board;
     private Vector2 firstTouchPosition;
@@ -42,9 +44,9 @@ public class Element : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(1))
         {
-            isColumnBomb = true;
-            GameObject arrow = Instantiate(columnArrow, transform.position, Quaternion.identity);
-            arrow.transform.parent = this.transform;
+            isColorBomb= true;
+            GameObject color = Instantiate(colorBomb, transform.position, Quaternion.identity);
+            color.transform.parent = this.transform;
         }
     }
 
@@ -92,6 +94,16 @@ public class Element : MonoBehaviour
 
     public IEnumerator CheckMoveCo()
     {
+        if(isColorBomb)
+        {
+            findMatches.GetPiecesOfColor(otherDot.tag);
+            isMatched = true;
+        }
+        else if(otherDot.GetComponent<Element>().isColorBomb)
+        {
+            findMatches.GetPiecesOfColor(this.gameObject.tag);
+            otherDot.GetComponent<Element>().isMatched = true;
+        }
         yield return new WaitForSeconds(.3f);
         if (otherDot != null)
         {

@@ -156,3 +156,6 @@ MonoBehaviour:
   isRowBomb: 0
   rowArrow: {fileID: 1640181380202873647, guid: ab75e2e004221094990c49bf7853e759, type: 3}
   columnArrow: {fileID: 5327329267952713783, guid: c55640af93da9274ab882715ed6b7582, type: 3}
+  otherDot: {fileID: 0}
+  isColorBomb: 0
+  colorBomb: {fileID: 982841070907211106, guid: 535f304e23b6aa8448b6460c79da45f4, type: 3}
