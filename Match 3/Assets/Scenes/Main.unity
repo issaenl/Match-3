@@ -177,6 +177,7 @@ MonoBehaviour:
   - {fileID: 8892269494791140773, guid: 23b500c80a8b0e249a9345e1ad621fbd, type: 3}
   - {fileID: 3931517040632305778, guid: 13c372fad333e4d4f856c64fb31f1685, type: 3}
   destroyEffect: {fileID: 246110442060374623, guid: 7f68a00aed3f4a14799703107baad1fc, type: 3}
+  currentElement: {fileID: 0}
 --- !u!1 &383783029
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 383783029}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.5303, y: 4.9565, z: 0}
+  m_LocalPosition: {x: 4.515, y: 4.949, z: 0}
   m_LocalScale: {x: 1.1153594, y: 1.1224512, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

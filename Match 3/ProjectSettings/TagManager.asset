@@ -16,6 +16,8 @@ TagManager:
   - White Element
   - Yellow Element
   - Tile
+  - Example
+  - Brown Element
   layers:
   - Default
   - TransparentFX
