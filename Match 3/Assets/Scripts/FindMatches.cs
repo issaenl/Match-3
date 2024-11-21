@@ -146,10 +146,13 @@ public class FindMatches : MonoBehaviour
         {
             for (int j = row - 1; j <= row + 1; j++)
             {
-                if(i >= 0 && i < board.width && j >=0 && j < board.height)
+                if(i >= 0 && i < board.width && j >= 0 && j < board.height)
                 {
-                    elements.Add(board.allDots[i, j]);
-                    board.allDots[i, j].GetComponent<Element>().isMatched = true;
+                    if (board.allDots[i, j] != null)
+                    {
+                        elements.Add(board.allDots[i, j]);
+                        board.allDots[i, j].GetComponent<Element>().isMatched = true;
+                    }
                 }
             }
         }

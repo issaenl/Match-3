@@ -93,13 +93,105 @@ public class Board : MonoBehaviour
         return false;
     }
 
+    private bool ColumnOrRow()
+    {
+        int numberHorizontal = 0;
+        int numberVertical = 0;
+        Element firstPiece = findMatches.currentMatches[0].GetComponent<Element>();
+        if (firstPiece != null)
+        {
+            foreach (GameObject currentPiece in findMatches.currentMatches)
+            {
+                Element element = currentPiece.GetComponent<Element>();
+                if (element.row == firstPiece.row)
+                {
+                    numberHorizontal++;
+                }
+                if (element.column == firstPiece.column)
+                {
+                    numberVertical++;
+                }
+            }
+        }
+        return (numberHorizontal == 5 || numberVertical == 5);
+    }
+
+    private void CheckToMakeBombs()
+    {
+        if(findMatches.currentMatches.Count == 4 || findMatches.currentMatches.Count == 7)
+        {
+            findMatches.CheckBombs();
+        }
+        if(findMatches.currentMatches.Count == 5 || findMatches.currentMatches.Count == 8)
+        {
+            if(ColumnOrRow())
+            {
+                if (currentElement != null)
+                {
+                    if (currentElement.isMatched)
+                    {
+                        if (!currentElement.isColorBomb)
+                        {
+                            currentElement.isMatched = false;
+                            currentElement.MakeColorBomb();
+                        }
+                    }
+                    else
+                    {
+                        if (currentElement.otherDot != null)
+                        {
+                            Element otherDot = currentElement.otherDot.GetComponent<Element>();
+                            if (otherDot.isMatched)
+                            {
+                                if(!otherDot.isColorBomb)
+                                {
+                                    otherDot.isMatched = false;
+                                    otherDot.MakeColorBomb();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (currentElement != null)
+                {
+                    if (currentElement.isMatched)
+                    {
+                        if (!currentElement.isZoneBomb)
+                        {
+                            currentElement.isMatched = false;
+                            currentElement.MakeZoneBomb();
+                        }
+                    }
+                    else
+                    {
+                        if (currentElement.otherDot != null)
+                        {
+                            Element otherDot = currentElement.otherDot.GetComponent<Element>();
+                            if (otherDot.isMatched)
+                            {
+                                if (!otherDot.isZoneBomb)
+                                {
+                                    otherDot.isMatched = false;
+                                    otherDot.MakeZoneBomb();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     private void DestroyMatchesAt(int column, int row)
     {
         if (allDots[column, row].GetComponent<Element>().isMatched)
         {
-            if(findMatches.currentMatches.Count == 4 || findMatches.currentMatches.Count == 7)
+            if(findMatches.currentMatches.Count >= 4)
             {
-                findMatches.CheckBombs();
+                CheckToMakeBombs();
             }
             GameObject particle = Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
             Destroy(particle, .5f);
