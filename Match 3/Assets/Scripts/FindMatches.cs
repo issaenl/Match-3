@@ -19,6 +19,24 @@ public class FindMatches : MonoBehaviour
         StartCoroutine(FindAllMatchesCo());
     }
 
+    private List<GameObject> IsZoneBomb(Element element1, Element element2, Element element3)
+    {
+        List<GameObject> currentElements = new List<GameObject>();
+        if (element1.isZoneBomb)
+        {
+            currentMatches.Union(GetZonePieces(element1.column, element1.row));
+        }
+        if (element2.isZoneBomb)
+        {
+            currentMatches.Union(GetZonePieces(element2.column, element2.row));
+        }
+        if (element3.isZoneBomb)
+        {
+            currentMatches.Union(GetZonePieces(element3.column, element3.row));
+        }
+        return currentElements;
+    }
+
     private List<GameObject> IsRowBomb(Element element1, Element element2, Element element3)
     {
         List<GameObject> currentElements = new List<GameObject>();
@@ -94,6 +112,7 @@ public class FindMatches : MonoBehaviour
                             {
                                 currentMatches.Union(IsRowBomb(leftDotDot, currentDotDot, rightDotDot));
                                 currentMatches.Union(IsColumnBomb(leftDotDot, currentDotDot, rightDotDot));
+                                currentMatches.Union(IsZoneBomb(leftDotDot, currentDotDot, rightDotDot));
                                 GetNearbyElements(leftDot, currentDot, rightDot);
                             }
                         }
@@ -110,6 +129,7 @@ public class FindMatches : MonoBehaviour
                             {
                                 currentMatches.Union(IsColumnBomb(upDotDot, currentDotDot, downDotDot));
                                 currentMatches.Union(IsRowBomb(upDotDot, currentDotDot, downDotDot));
+                                currentMatches.Union(IsZoneBomb(upDotDot, currentDotDot, downDotDot));
                                 GetNearbyElements(upDot, currentDot, downDot);
                             }
                         }
@@ -117,6 +137,23 @@ public class FindMatches : MonoBehaviour
                 }
             }
         }
+    }
+
+    List<GameObject> GetZonePieces(int column, int row)
+    {
+        List<GameObject> elements = new List<GameObject>();
+        for (int i = column - 1; i <= column + 1; i++)
+        {
+            for (int j = row - 1; j <= row + 1; j++)
+            {
+                if(i >= 0 && i < board.width && j >=0 && j < board.height)
+                {
+                    elements.Add(board.allDots[i, j]);
+                    board.allDots[i, j].GetComponent<Element>().isMatched = true;
+                }
+            }
+        }
+        return elements;
     }
 
     public void GetPiecesOfColor(string color)

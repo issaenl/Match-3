@@ -13,13 +13,15 @@ public class Element : MonoBehaviour
     public bool isMatched = false;
     public float swipeAngle = 0;
     public float swipeResist = 1f;
+    public GameObject otherDot;
     public bool isColumnBomb;
     public bool isRowBomb;
     public GameObject rowArrow;
     public GameObject columnArrow;
-    public GameObject otherDot;
     public bool isColorBomb;
     public GameObject colorBomb;
+    public bool isZoneBomb;
+    public GameObject zoneBomb;
     private FindMatches findMatches;
     private Board board;
     private Vector2 firstTouchPosition;
@@ -32,6 +34,8 @@ public class Element : MonoBehaviour
     {
         isColumnBomb = false;
         isRowBomb = false;
+        isColorBomb = false;
+        isZoneBomb = false;
         board = FindObjectOfType<Board>();
         findMatches = FindObjectOfType<FindMatches>();
         //targetX = (int)transform.position.x;
@@ -44,9 +48,9 @@ public class Element : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(1))
         {
-            isColorBomb= true;
-            GameObject color = Instantiate(colorBomb, transform.position, Quaternion.identity);
-            color.transform.parent = this.transform;
+            isZoneBomb = true;
+            GameObject zone = Instantiate(zoneBomb, transform.position, Quaternion.identity);
+            zone.transform.parent = this.transform;
         }
     }
 
