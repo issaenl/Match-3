@@ -211,15 +211,6 @@ public class FindMatches : MonoBehaviour
             if(board.currentElement.isMatched)
             {
                 board.currentElement.isMatched = false;
-                //int typeOfBomb = Random.Range(0, 100);
-                //if (typeOfBomb < 50)
-                //{
-                //    board.currentElement.MakeRowBomb();
-                //}
-                //else if (typeOfBomb >= 50)
-                //{
-                //    board.currentElement.MakeColumnBomb();
-                //}
                 if((board.currentElement.swipeAngle > -45 && board.currentElement.swipeAngle <= 45)
                     || (board.currentElement.swipeAngle < -135 || board.currentElement.swipeAngle >= 135))
                 {
@@ -233,19 +224,6 @@ public class FindMatches : MonoBehaviour
             else if(board.currentElement.otherDot != null)
             {
                 Element otherElement = board.currentElement.otherDot.GetComponent<Element>();
-                //if(otherElement.isMatched)
-                //{
-                //    otherElement.isMatched = false;
-                //    int typeOfBomb = Random.Range(0, 100);
-                //    if (typeOfBomb < 50)
-                //    {
-                //        otherElement.MakeRowBomb();
-                //    }
-                //    else if (typeOfBomb >= 50)
-                //    {
-                //        otherElement.MakeColumnBomb();
-                //    }
-                //}
                 if ((board.currentElement.swipeAngle > -45 && board.currentElement.swipeAngle <= 45)
                     || (board.currentElement.swipeAngle < -135 || board.currentElement.swipeAngle >= 135))
                 {

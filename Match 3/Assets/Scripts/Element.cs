@@ -167,11 +167,18 @@ public class Element : MonoBehaviour
         otherDot = board.allDots[column + (int)direction.x, row + (int)direction.y];
         previousRow = row;
         previousColumn = column;
-        otherDot.GetComponent<Element>().column += -1 * (int)direction.x;
-        otherDot.GetComponent<Element>().row += -1 * (int)direction.y;
-        column += (int)direction.x;
-        row += (int)direction.y;
-        StartCoroutine(CheckMoveCo());
+        if (otherDot != null)
+        {
+            otherDot.GetComponent<Element>().column += -1 * (int)direction.x;
+            otherDot.GetComponent<Element>().row += -1 * (int)direction.y;
+            column += (int)direction.x;
+            row += (int)direction.y;
+            StartCoroutine(CheckMoveCo());
+        }
+        else
+        {
+            board.currentState = GameState.move;
+        }
     }
 
     void MovePieces()
