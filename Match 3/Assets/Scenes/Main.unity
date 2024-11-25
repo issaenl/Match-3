@@ -167,46 +167,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 1
-  width: 15
-  height: 9
+  width: 5
+  height: 4
   offSet: 15
   tilePrefab: {fileID: 7504080696900510183, guid: 1e6f8ddd66baa78409cd6557c48f9639, type: 3}
-  breakableTilePrefab: {fileID: 1480339542204149411, guid: 6ce876658d564cb42804cd460ee36dc8, type: 3}
+  breakableTilePrefab: {fileID: 111119645669589891, guid: c0470939fae756a4d991af67ec1f34e2, type: 3}
   dots:
   - {fileID: 3215658083995696625, guid: 6df18050a5382674ab0a23a245a471aa, type: 3}
   - {fileID: 8596196795645654252, guid: 2086fe5264e9b5e4597d31828dec2c5c, type: 3}
   - {fileID: 8892269494791140773, guid: 23b500c80a8b0e249a9345e1ad621fbd, type: 3}
   - {fileID: 2269464831584712457, guid: 0fc6bf9be698f284395725604905e2e8, type: 3}
+  - {fileID: 8599439006013555726, guid: a021e2d2f4752e948a94caf110df0ce5, type: 3}
+  - {fileID: 1694824104649858176, guid: a2628a219b2087f40b3158ab9fa970a4, type: 3}
+  - {fileID: 910219934563409641, guid: b0e36d31a596b4e47ad322cdc22cf82c, type: 3}
+  - {fileID: 181944915796702335, guid: 8dbbbd4c9e399894c852a562e8712c3f, type: 3}
+  - {fileID: 5103031207311998740, guid: 79765c1b4041cbf44904604c2c5146b4, type: 3}
+  - {fileID: 3931517040632305778, guid: 13c372fad333e4d4f856c64fb31f1685, type: 3}
+  - {fileID: 2885946036668349202, guid: 4519744a3f829674abffd54e713988f3, type: 3}
   destroyEffect: {fileID: 246110442060374623, guid: 7f68a00aed3f4a14799703107baad1fc, type: 3}
   currentElement: {fileID: 0}
-  boardLayout:
-  - x: 1
-    y: 1
-    tileKind: 1
-  - x: 2
-    y: 2
-    tileKind: 1
-  - x: 3
-    y: 3
-    tileKind: 1
-  - x: 4
-    y: 4
-    tileKind: 1
-  - x: 5
-    y: 5
-    tileKind: 1
-  - x: 9
-    y: 0
-    tileKind: 0
-  - x: 9
-    y: 1
-    tileKind: 0
-  - x: 9
-    y: 2
-    tileKind: 0
-  - x: 9
-    y: 3
-    tileKind: 0
+  boardLayout: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
