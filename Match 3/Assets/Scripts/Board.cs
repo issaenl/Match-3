@@ -31,18 +31,21 @@ public class Board : MonoBehaviour
     public int height;
     public int offSet;
     public GameObject tilePrefab;
+    public GameObject breakableTilePrefab;
     public GameObject[] dots;
     public GameObject[,] allDots;
     public GameObject destroyEffect;
     public Element currentElement;
     public TileType[] boardLayout;
     private bool[,] blankSpaces;
+    private BackgroundTile[,] breakableTiles;
     private FindMatches findMatches;
     
     
     // Start is called before the first frame update
     void Start()
     {
+        breakableTiles = new BackgroundTile[width, height];
         findMatches = FindObjectOfType<FindMatches>();
         blankSpaces = new bool[width, height];
         allDots =  new GameObject[width, height];
@@ -60,8 +63,22 @@ public class Board : MonoBehaviour
         }
     }
 
+    public void GenerateBreakableTiles()
+    {
+        for (int i = 0; i < boardLayout.Length; i++)
+        {
+            if (boardLayout[i].tileKind == TileKind.Breakable)
+            {
+                Vector2 tempPosition = new Vector2(boardLayout[i].x, boardLayout[i].y);
+                GameObject tile = Instantiate(breakableTilePrefab, tempPosition, Quaternion.identity);
+                breakableTiles[boardLayout[i].x, boardLayout[i].y] = tile.GetComponent<BackgroundTile>();
+            }
+        }
+    }
+
     private void SetUp()
     {
+        GenerateBreakableTiles();
         GenerateBlankSpaces();
         for (int i = 0; i < width; i++)
         {
@@ -236,6 +253,14 @@ public class Board : MonoBehaviour
             if(findMatches.currentMatches.Count >= 4)
             {
                 CheckToMakeBombs();
+            }
+            if (breakableTiles[column, row] != null)
+            {
+                breakableTiles[column, row].TakeDamage(1);
+                if (breakableTiles[column, row].hitPoints <= 0)
+                {
+                    breakableTiles[column, row] = null;
+                }
             }
             GameObject particle = Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
             Destroy(particle, .5f);

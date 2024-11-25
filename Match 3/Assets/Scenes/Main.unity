@@ -171,6 +171,7 @@ MonoBehaviour:
   height: 9
   offSet: 15
   tilePrefab: {fileID: 7504080696900510183, guid: 1e6f8ddd66baa78409cd6557c48f9639, type: 3}
+  breakableTilePrefab: {fileID: 1480339542204149411, guid: 6ce876658d564cb42804cd460ee36dc8, type: 3}
   dots:
   - {fileID: 3215658083995696625, guid: 6df18050a5382674ab0a23a245a471aa, type: 3}
   - {fileID: 8596196795645654252, guid: 2086fe5264e9b5e4597d31828dec2c5c, type: 3}
@@ -194,6 +195,18 @@ MonoBehaviour:
   - x: 5
     y: 5
     tileKind: 1
+  - x: 9
+    y: 0
+    tileKind: 0
+  - x: 9
+    y: 1
+    tileKind: 0
+  - x: 9
+    y: 2
+    tileKind: 0
+  - x: 9
+    y: 3
+    tileKind: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
