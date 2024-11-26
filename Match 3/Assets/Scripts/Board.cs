@@ -383,7 +383,8 @@ public class Board : MonoBehaviour
         yield return new WaitForSeconds(.6f);
         if(IsDeadlocked())
         {
-            Debug.Log("Нет ходов!!!!!");
+            ShuffleBoard();
+            Debug.Log("Нет ходов");
         }
         currentState = GameState.move;
     }
@@ -474,5 +475,46 @@ public class Board : MonoBehaviour
             }
         }
         return true;
+    }
+
+    private void ShuffleBoard()
+    {
+        List<GameObject> newBoard = new List<GameObject>();
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (!allDots[i, j] != null)
+                {
+                    newBoard.Add(allDots[i, j]);
+                }
+            }
+        }
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (!blankSpaces[i, j])
+                {
+                    int pieceToUse = Random.Range(0, newBoard.Count);
+                    int maxIterations = 0;
+                    while (MatchesAt(i, j, newBoard[pieceToUse]) && maxIterations < 100)
+                    {
+                        pieceToUse = Random.Range(0, newBoard.Count);
+                        maxIterations++;
+                    }
+                    Element piece = newBoard[pieceToUse].GetComponent<Element>();
+                    maxIterations = 0;
+                    piece.column = i;
+                    piece.row = j;
+                    allDots[i, j] = newBoard[pieceToUse];
+                    newBoard.Remove(newBoard[pieceToUse]);
+                }
+            }
+        }
+        if(IsDeadlocked())
+        {
+            ShuffleBoard();
+        }
     }
 }
