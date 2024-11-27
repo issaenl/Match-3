@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 60431990}
   - component: {fileID: 60431991}
+  - component: {fileID: 60431992}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -167,8 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 1
-  width: 5
-  height: 4
+  width: 15
+  height: 9
   offSet: 15
   tilePrefab: {fileID: 7504080696900510183, guid: 1e6f8ddd66baa78409cd6557c48f9639, type: 3}
   breakableTilePrefab: {fileID: 111119645669589891, guid: c0470939fae756a4d991af67ec1f34e2, type: 3}
@@ -186,7 +187,37 @@ MonoBehaviour:
   - {fileID: 2885946036668349202, guid: 4519744a3f829674abffd54e713988f3, type: 3}
   destroyEffect: {fileID: 246110442060374623, guid: 7f68a00aed3f4a14799703107baad1fc, type: 3}
   currentElement: {fileID: 0}
-  boardLayout: []
+  boardLayout:
+  - x: 0
+    y: 0
+    tileKind: 0
+  - x: 0
+    y: 1
+    tileKind: 0
+  - x: 1
+    y: 0
+    tileKind: 0
+  - x: 1
+    y: 1
+    tileKind: 0
+  - x: 0
+    y: 2
+    tileKind: 0
+--- !u!114 &60431992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60431989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20e0e0388928d446857d0fd3cdf7b10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintDelay: 3
+  hintParticle: {fileID: 1511208026177615654, guid: c1459bfd74012234c8c43f418c94a36b, type: 3}
+  currentHint: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

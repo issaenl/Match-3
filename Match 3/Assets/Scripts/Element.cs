@@ -22,6 +22,7 @@ public class Element : MonoBehaviour
     public GameObject colorBomb;
     public bool isZoneBomb;
     public GameObject zoneBomb;
+    private HintManager hintManager;
     private FindMatches findMatches;
     private Board board;
     private Vector2 firstTouchPosition;
@@ -36,18 +37,20 @@ public class Element : MonoBehaviour
         isRowBomb = false;
         isColorBomb = false;
         isZoneBomb = false;
+        hintManager = FindObjectOfType<HintManager>();
         board = FindObjectOfType<Board>();
         findMatches = FindObjectOfType<FindMatches>();
     }
 
     //void OnMouseOver()
     //{
-    //    if(Input.GetMouseButtonDown(1))
-    //    {
-    //        isZoneBomb = true;
-    //        GameObject zone = Instantiate(zoneBomb, transform.position, Quaternion.identity);
-    //        zone.transform.parent = this.transform;
-    //    }
+    //    //if (Input.GetMouseButtonDown(1))
+    //    //{
+    //    //    isZoneBomb = true;
+    //    //    GameObject zone = Instantiate(zoneBomb, transform.position, Quaternion.identity);
+    //    //    zone.transform.parent = this.transform;
+    //    //}
+
     //}
 
     // Update is called once per frame
@@ -129,6 +132,10 @@ public class Element : MonoBehaviour
 
     void OnMouseDown()
     {
+        if(hintManager != null)
+        {
+            hintManager.DestroyHint();
+        }
         if(board.currentState == GameState.move)
         {
             firstTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
