@@ -171,7 +171,7 @@ MonoBehaviour:
   currentState: 1
   width: 15
   height: 9
-  offSet: 15
+  offSet: 10
   tilePrefab: {fileID: 7504080696900510183, guid: 1e6f8ddd66baa78409cd6557c48f9639, type: 3}
   breakableTilePrefab: {fileID: 111119645669589891, guid: c0470939fae756a4d991af67ec1f34e2, type: 3}
   dots:
@@ -180,12 +180,6 @@ MonoBehaviour:
   - {fileID: 8892269494791140773, guid: 23b500c80a8b0e249a9345e1ad621fbd, type: 3}
   - {fileID: 2269464831584712457, guid: 0fc6bf9be698f284395725604905e2e8, type: 3}
   - {fileID: 8599439006013555726, guid: a021e2d2f4752e948a94caf110df0ce5, type: 3}
-  - {fileID: 1694824104649858176, guid: a2628a219b2087f40b3158ab9fa970a4, type: 3}
-  - {fileID: 910219934563409641, guid: b0e36d31a596b4e47ad322cdc22cf82c, type: 3}
-  - {fileID: 181944915796702335, guid: 8dbbbd4c9e399894c852a562e8712c3f, type: 3}
-  - {fileID: 5103031207311998740, guid: 79765c1b4041cbf44904604c2c5146b4, type: 3}
-  - {fileID: 3931517040632305778, guid: 13c372fad333e4d4f856c64fb31f1685, type: 3}
-  - {fileID: 2885946036668349202, guid: 4519744a3f829674abffd54e713988f3, type: 3}
   destroyEffect: {fileID: 246110442060374623, guid: 7f68a00aed3f4a14799703107baad1fc, type: 3}
   currentElement: {fileID: 0}
   boardLayout:
@@ -204,6 +198,8 @@ MonoBehaviour:
   - x: 0
     y: 2
     tileKind: 0
+  basePieceValue: 20
+  refillDelay: 0.5
 --- !u!114 &60431992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20e0e0388928d446857d0fd3cdf7b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintDelay: 10
+  hintDelay: 20
   hintParticle: {fileID: 1511208026177615654, guid: c1459bfd74012234c8c43f418c94a36b, type: 3}
   currentHint: {fileID: 0}
 --- !u!1 &519420028
@@ -550,8 +546,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1482, y: 849.5}
-  m_SizeDelta: {x: 520.5669, y: 134.3597}
+  m_AnchoredPosition: {x: -14.9, y: 174.29}
+  m_SizeDelta: {x: 188.6413, y: 81.8467}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &728455301
 MonoBehaviour:
@@ -573,10 +569,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00000000
+  m_text: 0000000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bcb5618a21abb8c4a8cffebed876b3d0, type: 2}
+  m_sharedMaterial: {fileID: -4751770408728186167, guid: bcb5618a21abb8c4a8cffebed876b3d0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -600,13 +596,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -636,7 +632,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -229.09814, w: 0}
+  m_margin: {x: 0, y: 0, z: 0.6466827, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -800,7 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 400}
@@ -935,8 +931,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1366.5, y: 849.5}
-  m_SizeDelta: {x: 1107, y: 461}
+  m_AnchoredPosition: {x: -278.2511, y: 174.29}
+  m_SizeDelta: {x: 243.4995, y: 101.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2085144913
 MonoBehaviour:

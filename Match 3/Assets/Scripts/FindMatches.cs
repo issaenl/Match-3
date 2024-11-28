@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.Xml.Linq;
+using Unity.VisualScripting;
 
 public class FindMatches : MonoBehaviour
 {
@@ -183,8 +184,13 @@ public class FindMatches : MonoBehaviour
         {
             if(board.allDots[column, i] != null)
             {
+                Element element = board.allDots[column, i].GetComponent<Element>();
+                if(element.isRowBomb)
+                {
+                    elements.Union(GetRowPieces(i)).ToList();
+                }
                 elements.Add(board.allDots[column, i]);
-                board.allDots[column, i].GetComponent<Element>().isMatched = true;
+                element.isMatched = true;
             }
         }
         return elements;
@@ -197,8 +203,13 @@ public class FindMatches : MonoBehaviour
         {
             if (board.allDots[i, row] != null)
             {
+                Element element = board.allDots[i, row].GetComponent<Element>();
+                if (element.isColumnBomb)
+                {
+                    elements.Union(GetColumnPieces(i)).ToList();
+                }
                 elements.Add(board.allDots[i, row]);
-                board.allDots[i, row].GetComponent<Element>().isMatched = true;
+                element.isMatched = true;
             }
         }
         return elements;

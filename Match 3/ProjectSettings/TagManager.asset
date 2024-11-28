@@ -18,6 +18,7 @@ TagManager:
   - Tile
   - Example
   - Brown Element
+  - Color
   layers:
   - Default
   - TransparentFX
