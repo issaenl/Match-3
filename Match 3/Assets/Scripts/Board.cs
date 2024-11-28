@@ -39,6 +39,7 @@ public class Board : MonoBehaviour
     public TileType[] boardLayout;
     public int basePieceValue = 20;
     public float refillDelay = 0.5f;
+    public int[] scoreGoals;
     private bool[,] blankSpaces;
     private BackgroundTile[,] breakableTiles;
     private FindMatches findMatches;
