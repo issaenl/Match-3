@@ -56,10 +56,14 @@ public class Element : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SpriteRenderer mySprite = GetComponent<SpriteRenderer>();
         if (isMatched)
         {
-            SpriteRenderer mySprite = GetComponent<SpriteRenderer>();
             mySprite.color = Color.grey;
+        }
+        else
+        {
+            mySprite.color = Color.white;
         }
         targetX = column;
         targetY = row;
@@ -155,8 +159,8 @@ public class Element : MonoBehaviour
 
     void CalculateAngle()
     {
-        if(Mathf.Abs(finalTouchPosition.y - firstTouchPosition.y) > swipeResist || 
-            Mathf.Abs(finalTouchPosition.x - firstTouchPosition.x) > swipeResist)
+        if(Mathf.Abs(finalTouchPosition.y - firstTouchPosition.y) > swipeResist
+           || Mathf.Abs(finalTouchPosition.x - firstTouchPosition.x) > swipeResist)
         {
             board.currentState = GameState.wait;
             swipeAngle = Mathf.Atan2(finalTouchPosition.y - firstTouchPosition.y, finalTouchPosition.x - firstTouchPosition.x) * 180 / Mathf.PI;
@@ -210,7 +214,10 @@ public class Element : MonoBehaviour
             //down swipe
             MovePiecesActual(Vector2.down);
         }
-        board.currentState = GameState.move;
+        else
+        {
+            board.currentState = GameState.move;
+        }
     }
 
     void FindMatches()
