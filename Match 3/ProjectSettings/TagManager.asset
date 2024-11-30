@@ -19,6 +19,7 @@ TagManager:
   - Example
   - Brown Element
   - Color
+  - Breakable Element
   layers:
   - Default
   - TransparentFX

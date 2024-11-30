@@ -189,6 +189,10 @@ public class FindMatches : MonoBehaviour
                 {
                     elements.Union(GetRowPieces(i)).ToList();
                 }
+                if (element.isZoneBomb)
+                {
+                    elements.Union(GetZonePieces(column, i)).ToList();
+                }
                 elements.Add(board.allDots[column, i]);
                 element.isMatched = true;
             }
@@ -207,6 +211,10 @@ public class FindMatches : MonoBehaviour
                 if (element.isColumnBomb)
                 {
                     elements.Union(GetColumnPieces(i)).ToList();
+                }
+                if (element.isZoneBomb)
+                {
+                    elements.Union(GetZonePieces(i, row)).ToList();
                 }
                 elements.Add(board.allDots[i, row]);
                 element.isMatched = true;
