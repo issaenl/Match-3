@@ -11,4 +11,9 @@ public class SoundManager : MonoBehaviour
         int clipToPaly = Random.Range(0, destroyNoise.Length);
         destroyNoise[clipToPaly].Play();
     }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 }

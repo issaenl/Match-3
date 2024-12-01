@@ -24,6 +24,7 @@ public class Element : MonoBehaviour
     public GameObject zoneBomb;
     private HintManager hintManager;
     private FindMatches findMatches;
+    private GameManager gameManager;
     private Board board;
     private Vector2 firstTouchPosition;
     private Vector2 finalTouchPosition;
@@ -38,6 +39,7 @@ public class Element : MonoBehaviour
         isColorBomb = false;
         isZoneBomb = false;
         hintManager = FindObjectOfType<HintManager>();
+        gameManager = FindObjectOfType<GameManager>();
         board = FindObjectOfType<Board>();
         findMatches = FindObjectOfType<FindMatches>();
     }
@@ -128,6 +130,13 @@ public class Element : MonoBehaviour
             }
             else
             {
+                if(gameManager != null)
+                {
+                    if(gameManager.requirements.gameType == GameType.Moves)
+                    {
+                        gameManager.DecreaseCounterValue();
+                    }
+                }
                 board.DestroyMatches();
             }
             otherDot = null;
