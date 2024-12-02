@@ -20,10 +20,14 @@ public class GoalManager : MonoBehaviour
     public GameObject goalGamePrefab;
     public GameObject goalIntroParent;
     public GameObject goalGameParent;
-
+    public GameObject winPanel;
+    public GameObject losePanel;
+    private GameManager gameManager;
+    private bool hasShow = false;
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         SetupIntroGoals();
     }
 
@@ -46,6 +50,30 @@ public class GoalManager : MonoBehaviour
         }
     }
 
+    public void SetupWinPanel()
+    {
+        for (int i = 0; i < levelGoals.Length; i++)
+        {
+            GameObject win = Instantiate(goalPrefab, winPanel.transform.position, Quaternion.identity);
+            win.transform.SetParent(winPanel.transform);
+            GoalPanel panel = win.GetComponent<GoalPanel>();
+            panel.thisSprite = levelGoals[i].goalSrite;
+            panel.thisString = levelGoals[i].numberCollected + "/" + levelGoals[i].numberNeeded;
+        }
+    }
+
+    public void SetupLosePanel()
+    {
+        for (int i = 0; i < levelGoals.Length; i++)
+        {
+            GameObject lose = Instantiate(goalPrefab, losePanel.transform.position, Quaternion.identity);
+            lose.transform.SetParent(losePanel.transform);
+            GoalPanel panel = lose.GetComponent<GoalPanel>();
+            panel.thisSprite = levelGoals[i].goalSrite;
+            panel.thisString = levelGoals[i].numberCollected + "/" + levelGoals[i].numberNeeded;
+        }
+    }
+
     public void UpdateGoals()
     {
         int goalsComplited = 0;
@@ -58,9 +86,13 @@ public class GoalManager : MonoBehaviour
                 currentGoals[i].thisText.text = levelGoals[i].numberNeeded + "/" + levelGoals[i].numberNeeded;
             }
         }
-        if(goalsComplited >= levelGoals.Length)
+        if(goalsComplited >= levelGoals.Length && !hasShow)
         {
-            Debug.Log("!!!!!!!!!!!");
+            hasShow = true;
+            if (gameManager != null)
+            {
+                gameManager.WinGame();
+            }
         }
     }
 

@@ -185,7 +185,7 @@ public class FindMatches : MonoBehaviour
             if(board.allDots[column, i] != null)
             {
                 Element element = board.allDots[column, i].GetComponent<Element>();
-                if(element.isRowBomb)
+                if (element.isRowBomb)
                 {
                     elements.Union(GetRowPieces(i)).ToList();
                 }

@@ -126,7 +126,6 @@ public class Element : MonoBehaviour
                 otherDot.GetComponent<Element>().column = tempCol;
                 yield return new WaitForSeconds(.5f);
                 board.currentElement = null;
-                board.currentState = GameState.move;
             }
             else
             {
@@ -140,6 +139,7 @@ public class Element : MonoBehaviour
                 board.DestroyMatches();
             }
             otherDot = null;
+            board.currentState = GameState.move;
         }
     }
 

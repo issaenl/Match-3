@@ -24,12 +24,17 @@ public class GameManager : MonoBehaviour
 {
     public EndGameRequirements requirements;
     public TextMeshProUGUI label;
+    public GameObject WinPanel;
+    public GameObject LosePanel;
     public int currentCounterValue;
     private float timerSeconds;
-
+    private Board board;
+    private GoalManager goalManager;
     // Start is called before the first frame update
     void Start()
     {
+        board = FindObjectOfType<Board>();
+        goalManager = FindObjectOfType<GoalManager>();
         SetupGame();
     }
 
@@ -43,15 +48,37 @@ public class GameManager : MonoBehaviour
 
     public void DecreaseCounterValue()
     {
-
-        currentCounterValue--;
-        SetupMovesTimeText();
-        if (currentCounterValue <= 0)
+        if (board.currentState != GameState.pause)
         {
-            Debug.Log("End");
-            currentCounterValue = 0;
+            currentCounterValue--;
             SetupMovesTimeText();
+            if (currentCounterValue <= 0)
+            {
+                LoseGame();
+            }
         }
+    }
+
+    public void WinGame()
+    {
+        WinPanel.SetActive(true);
+        board.currentState = GameState.win;
+        goalManager.SetupWinPanel();
+        currentCounterValue = 0;
+        SetupMovesTimeText();
+        FadePanelController fade = FindObjectOfType<FadePanelController>();
+        fade.GameOver();
+    }
+
+    public void LoseGame()
+    {
+        LosePanel.SetActive(true);
+        board.currentState = GameState.lose;
+        goalManager.SetupLosePanel();
+        currentCounterValue = 0;
+        SetupMovesTimeText();
+        FadePanelController fade = FindObjectOfType<FadePanelController>();
+        fade.GameOver();
     }
 
     void SetupMovesTimeText()
