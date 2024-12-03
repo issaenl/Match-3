@@ -240,18 +240,18 @@ public class FindMatches : MonoBehaviour
                     board.currentElement.MakeColumnBomb();
                 }
             }
-            else if(board.currentElement.otherDot != null)
+        }
+        else if (board.currentElement.otherDot != null)
+        {
+            Element otherElement = board.currentElement.otherDot.GetComponent<Element>();
+            if ((board.currentElement.swipeAngle > -45 && board.currentElement.swipeAngle <= 45)
+                || (board.currentElement.swipeAngle < -135 || board.currentElement.swipeAngle >= 135))
             {
-                Element otherElement = board.currentElement.otherDot.GetComponent<Element>();
-                if ((board.currentElement.swipeAngle > -45 && board.currentElement.swipeAngle <= 45)
-                    || (board.currentElement.swipeAngle < -135 || board.currentElement.swipeAngle >= 135))
-                {
-                    otherElement.MakeRowBomb();
-                }
-                else
-                {
-                    otherElement.MakeColumnBomb();
-                }
+                otherElement.MakeRowBomb();
+            }
+            else
+            {
+                otherElement.MakeColumnBomb();
             }
         }
     }
