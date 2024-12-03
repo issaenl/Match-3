@@ -30,11 +30,27 @@ public class GameManager : MonoBehaviour
     private float timerSeconds;
     private Board board;
     private GoalManager goalManager;
+
+    void SetGameType()
+    {
+        if(board.world != null)
+        {
+            if (board.level < board.world.levels.Length)
+            {
+                if (board.world.levels[board.level] != null)
+                {
+                    requirements = board.world.levels[board.level].requirements;
+                }
+            }
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         board = FindObjectOfType<Board>();
         goalManager = FindObjectOfType<GoalManager>();
+        SetGameType();
         SetupGame();
     }
 

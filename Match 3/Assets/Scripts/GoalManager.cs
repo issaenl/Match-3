@@ -24,10 +24,31 @@ public class GoalManager : MonoBehaviour
     public GameObject losePanel;
     private GameManager gameManager;
     private bool hasShow = false;
+    private Board board;
+
+    void GetGoals()
+    {
+        if(board != null)
+        {
+            if(board.world != null)
+            {
+                if (board.level < board.world.levels.Length)
+                {
+                    if (board.world.levels[board.level] != null)
+                    {
+                        levelGoals = board.world.levels[board.level].levelGoals;
+                    }
+                }
+            }
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        board = FindObjectOfType<Board>();
         gameManager = FindObjectOfType<GameManager>();
+        GetGoals();
         SetupIntroGoals();
     }
 

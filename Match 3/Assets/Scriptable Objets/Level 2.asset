@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a306b28cb770c4a9e9b6814f1c3c4f, type: 3}
+  m_Name: Level 2
+  m_EditorClassIdentifier: 
+  width: 15
+  height: 9
+  boardLayout: []
+  elements:
+  - {fileID: 8596196795645654252, guid: 2086fe5264e9b5e4597d31828dec2c5c, type: 3}
+  - {fileID: 3215658083995696625, guid: 6df18050a5382674ab0a23a245a471aa, type: 3}
+  - {fileID: 8892269494791140773, guid: 23b500c80a8b0e249a9345e1ad621fbd, type: 3}
+  - {fileID: 1046101669661386116, guid: 837189d6d0da7124cb987b0db527bf8d, type: 3}
+  - {fileID: 8599439006013555726, guid: a021e2d2f4752e948a94caf110df0ce5, type: 3}
+  - {fileID: 3931517040632305778, guid: 13c372fad333e4d4f856c64fb31f1685, type: 3}
+  - {fileID: 2885946036668349202, guid: 4519744a3f829674abffd54e713988f3, type: 3}
+  scoreGoals: f4010000200300004c040000
+  requirements:
+    gameType: 1
+    counterValue: 180
+  levelGoals:
+  - numberNeeded: 15
+    numberCollected: 0
+    goalSrite: {fileID: 21300000, guid: f2d239fe31f8f2b4783e63399ba38555, type: 3}
+    matchValue: Blue Element
+  - numberNeeded: 15
+    numberCollected: 0
+    goalSrite: {fileID: 21300000, guid: c81ce9f8832594a41addff53465a3b78, type: 3}
+    matchValue: White Element

@@ -29,15 +29,21 @@ public class TileType
 
 public class Board : MonoBehaviour
 {
+    public int level;
+    public World world;
+
     public GameState currentState = GameState.move;
+
     public int width;
     public int height;
     public int offSet;
+
     public GameObject tilePrefab;
     public GameObject breakableTilePrefab;
     public GameObject[] dots;
     public GameObject[,] allDots;
     public GameObject destroyEffect;
+
     public Element currentElement;
     public TileType[] boardLayout;
     public int basePieceValue = 20;
@@ -50,7 +56,25 @@ public class Board : MonoBehaviour
     private FindMatches findMatches;
     private ScoreManager scoreManager;
     private int streakValue = 1;
-    
+
+    private void Awake()
+    {
+        if (world != null)
+        {
+            if (level < world.levels.Length)
+            {
+                if (world.levels[level] != null)
+                {
+                    width = world.levels[level].width;
+                    height = world.levels[level].height;
+                    dots = world.levels[level].elements;
+                    boardLayout = world.levels[level].boardLayout;
+                    scoreGoals = world.levels[level].scoreGoals;
+                }
+            }
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
