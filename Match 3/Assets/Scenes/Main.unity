@@ -393,7 +393,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 520846136}
         m_TargetAssemblyTypeName: BackToLevelChoose, Assembly-CSharp
-        m_MethodName: Accept
+        m_MethodName: WinOK
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -768,7 +768,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 520846136}
         m_TargetAssemblyTypeName: BackToLevelChoose, Assembly-CSharp
-        m_MethodName: Accept
+        m_MethodName: LoseOK
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

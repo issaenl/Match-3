@@ -6,20 +6,27 @@ using UnityEngine.SceneManagement;
 public class BackToLevelChoose : MonoBehaviour
 {
     public string sceneToLoad;
+    private GameData gameData;
+    private Board board;
 
-    public void Accept()
+    public void WinOK()
+    {
+        if (gameData != null)
+        {
+            gameData.saveData.isActive[board.level + 1] = true;
+            gameData.Save();
+        }
+        SceneManager.LoadScene(sceneToLoad);
+    }
+
+    public void LoseOK()
     {
         SceneManager.LoadScene(sceneToLoad);
     }
-    // Start is called before the first frame update
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        gameData = FindObjectOfType<GameData>();
+        board = FindObjectOfType<Board>();
     }
 }

@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class LevelButton : MonoBehaviour
 {
+    private GameData gameData;
+
+    private int starsActive;
+
     public bool isActive;
     public Sprite activeSprite;
     public Sprite lockedSprite;
@@ -20,18 +24,36 @@ public class LevelButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameData = FindObjectOfType<GameData>();
         buttonImage = GetComponent<Image>();
         myButton = GetComponent<Button>();
+        LoadData();
         ActiveStars();
         ShowLevel();
         DecideSprite();
     }
 
+    void LoadData()
+    {
+        if(gameData != null)
+        {
+            if (gameData.saveData.isActive[level - 1])
+            {
+                isActive = true;
+            }
+            else
+            {
+                isActive = false;
+            }
+            starsActive = gameData.saveData.stars[level - 1];
+        }
+    }
+
     void ActiveStars()
     {
-        for (int i = 0; i < stars.Length; i++)
+        for (int i = 0; i < starsActive; i++)
         {
-            stars[i].enabled = false;
+            stars[i].enabled = true;
         }
     }
 

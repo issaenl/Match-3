@@ -10,11 +10,13 @@ public class ScoreManager : MonoBehaviour
     public int score;
     public Image progressLine;
     private Board board;
+    private GameData gameData;
 
     // Start is called before the first frame update
     void Start()
     {
         board = FindObjectOfType<Board>();
+        gameData = FindObjectOfType<GameData>();
     }
 
     // Update is called once per frame
@@ -26,6 +28,15 @@ public class ScoreManager : MonoBehaviour
     public void IncreaseScore(int amountToIncrease)
     {
         score += amountToIncrease;
+        if(gameData != null)
+        {
+            int highScore = gameData.saveData.highScores[board.level];
+            if (score > highScore)
+            {
+                gameData.saveData.highScores[board.level] = score;
+            }
+            gameData.Save();
+        }
         UpdateLine();
     }
 
