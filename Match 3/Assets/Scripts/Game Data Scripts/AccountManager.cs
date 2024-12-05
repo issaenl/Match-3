@@ -14,8 +14,13 @@ public class AccountManager : MonoBehaviour
     public InputField nameField;
     public InputField passwordField;
     public InputField repeatField;
-    public Text error;
+    public InputField loginField;
+    public InputField loginPasswordField;
+    public Text errorRegistration;
+    public Text errorAuthenticate;
     public GameObject back;
+    public GameObject registrationPanel;
+    public GameObject authotizationPanel;
 
     private string path = "URI=file:accounts.db";
 
@@ -44,13 +49,30 @@ public class AccountManager : MonoBehaviour
         RegistrateAccount();
     }
 
+    public void ClickAuthenticate()
+    {
+        AuthenticateAccount();
+    }
+
+    public void ClickGoToAuthorization()
+    {
+        registrationPanel.SetActive(false);
+        authotizationPanel.SetActive(true);
+    }
+
+    public void ClickGoToRegistration()
+    {
+        authotizationPanel.SetActive(false);
+        registrationPanel.SetActive(true);
+    }
+
     void RegistrateAccount()
     {
         string name = nameField.text;
         string password = passwordField.text;
         string repeat = repeatField.text;
 
-        error.text = "";
+        errorRegistration.text = "";
         if (password != "" && name != "" && repeat != "")
         {
             if (CheckPassword(password, repeat) && CheckName(name))
@@ -62,8 +84,8 @@ public class AccountManager : MonoBehaviour
                     {
                         command.CommandText = "INSERT INTO accounts (name, password) VALUES ('" + name + "', '" + password + "');";
                         command.ExecuteNonQuery();
-                        error.text = "Регистрация успешна!";
-                        error.color = Color.green;
+                        errorRegistration.text = "Регистрация успешна!";
+                        errorRegistration.color = Color.green;
                         back.SetActive(false);
                     }
 
@@ -72,7 +94,44 @@ public class AccountManager : MonoBehaviour
         }
         else
         {
-            error.text = "Не все поля заполнены!";
+            errorRegistration.text = "Не все поля заполнены!";
+        }
+    }
+
+    void AuthenticateAccount()
+    {
+        string loginName = loginField.text;
+        string loginPassword = loginPasswordField.text;
+
+        errorAuthenticate.text = "";
+        if (loginName != "" && loginPassword != "")
+        {
+            using (var connection = new SqliteConnection(path))
+            {
+                connection.Open();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT COUNT(*) FROM accounts WHERE name = @name AND password = @password";
+                    command.Parameters.AddWithValue("@name", loginName);
+                    command.Parameters.AddWithValue("@password", loginPassword);
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+
+                    if (count > 0)
+                    {
+                        errorAuthenticate.text = "Авторизация успешна!";
+                        errorAuthenticate.color = Color.green;
+                        back.SetActive(false);
+                    }
+                    else
+                    {
+                        errorAuthenticate.text = "Неверное имя пользователя или пароль!";
+                    }
+                }
+            }
+        }
+        else
+        {
+            errorAuthenticate.text = "Не все поля заполнены!";
         }
     }
 
@@ -86,13 +145,13 @@ public class AccountManager : MonoBehaviour
             }
             else
             {
-                error.text = "Пароль слишком легкий!";
+                errorRegistration.text = "Пароль слишком легкий!";
                 return false;
             }
         }
         else
         {
-            error.text = "Пароль не совпадает!";
+            errorRegistration.text = "Пароль не совпадает!";
             return false;
         }
     }
@@ -101,19 +160,19 @@ public class AccountManager : MonoBehaviour
     {
         if (!IsEmail(name))
         {
-            if (!IsUsernameTaken(name))
+            if (!IsTakenName(name))
             {
                 return true;
             }
             else
             {
-                error.text = "Имя уже занято!";
+                errorRegistration.text = "Имя уже занято!";
                 return false;
             }
         }
         else
         {
-            error.text = "Вы не можете использовать почту в качестве имени!";
+            errorRegistration.text = "Вы не можете использовать почту в качестве имени!";
             return false;
         }
     }
@@ -128,7 +187,7 @@ public class AccountManager : MonoBehaviour
         return Regex.IsMatch(input, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
     }
 
-    bool IsUsernameTaken(string name)
+    bool IsTakenName(string name)
     {
         using (var connection = new SqliteConnection(path))
         {
