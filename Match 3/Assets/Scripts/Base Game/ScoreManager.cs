@@ -25,10 +25,9 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
-    public void IncreaseScore(int amountToIncrease)
+    public void SaveScore()
     {
-        score += amountToIncrease;
-        if(gameData != null)
+        if (gameData != null)
         {
             int highScore = gameData.saveData.highScores[board.level];
             if (score > highScore)
@@ -37,6 +36,11 @@ public class ScoreManager : MonoBehaviour
             }
             gameData.Save();
         }
+    }
+
+    public void IncreaseScore(int amountToIncrease)
+    {
+        score += amountToIncrease;
         UpdateLine();
     }
 

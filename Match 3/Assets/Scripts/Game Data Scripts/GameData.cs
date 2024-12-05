@@ -15,16 +15,46 @@ public class SaveData
     public bool[] isActive;
     public int[] highScores;
     public int[] stars;
+
+    public SaveData()
+    {
+        isActive = new bool[] { true, false, false };
+        highScores = new int[3];
+        stars = new int[3];
+    }
 }
 
 public class GameData : MonoBehaviour
 {
     public static GameData gameData;
     public SaveData saveData;
+    public int userID;
+
+    public string path = "URI=file:progress.db";
+
+    private void CreateTable()
+    {
+        using (var connection = new SqliteConnection(path))
+        {
+            connection.Open();
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = @"
+                CREATE TABLE IF NOT EXISTS progress (
+                    UserID INTEGER PRIMARY KEY,
+                    IsActive TEXT,
+                    HighScores TEXT,
+                    Stars TEXT
+                )";
+                command.ExecuteNonQuery();
+            }
+        }
+    }
 
     void Awake()
     {
-        if(gameData == null)
+        userID = AccountManager.Instance.GetUserID();
+        if (gameData == null)
         {
             DontDestroyOnLoad(this.gameObject);
             gameData = this;
@@ -33,36 +63,59 @@ public class GameData : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        CreateTable();
         Load();
-    }
-
-    private void Start()
-    {
-        
     }
 
     public void Save()
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream file = File.Open(Application.persistentDataPath + "/player.dat", FileMode.Create);
-        SaveData data = new SaveData();
-        data = saveData;
-        formatter.Serialize(file, data);
-        file.Close();
-        Debug.Log("Saved");
+        using (var connection = new SqliteConnection(path))
+        {
+            connection.Open();
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "INSERT OR REPLACE INTO progress (UserID, IsActive, HighScores, Stars) VALUES (@UserID, @IsActive, @HighScores, @Stars)";
+                command.Parameters.AddWithValue("@UserID", userID);
+                command.Parameters.AddWithValue("@IsActive", string.Join(",", saveData.isActive));
+                command.Parameters.AddWithValue("@HighScores", string.Join(",", saveData.highScores));
+                command.Parameters.AddWithValue("@Stars", string.Join(",", saveData.stars));
+                command.ExecuteNonQuery();
+            }
+            connection.Close();
+        }
     }
 
     public void Load()
     {
-        if(File.Exists(Application.persistentDataPath + "/player.dat"))
+        using (var connection = new SqliteConnection(path))
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/player.dat", FileMode.Open);
-            saveData = formatter.Deserialize(file) as SaveData;
-            file.Close();
-            Debug.Log("Loaded");
+            connection.Open();
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT IsActive, HighScores, Stars FROM progress WHERE UserID = @UserID";
+                command.Parameters.AddWithValue("@UserID", userID); 
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        saveData.isActive = Array.ConvertAll(reader["IsActive"].ToString().Split(','), bool.Parse);
+                        saveData.highScores = Array.ConvertAll(reader["HighScores"].ToString().Split(','), int.Parse);
+                        saveData.stars = Array.ConvertAll(reader["Stars"].ToString().Split(','), int.Parse);
+                        Debug.Log("Loaded IsActive: " + string.Join(",", saveData.isActive));
+                        Debug.Log("Loaded HighScores: " + string.Join(",", saveData.highScores));
+                        Debug.Log("Loaded Stars: " + string.Join(",", saveData.stars));
+                    }
+                    else
+                    {
+                        saveData = new SaveData();
+                        Save();
+                    }
+                }
+            }
+            connection.Close();
         }
     }
+
 
     private void OnDisable()
     {

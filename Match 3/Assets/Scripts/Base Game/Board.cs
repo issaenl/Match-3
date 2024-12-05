@@ -59,7 +59,7 @@ public class Board : MonoBehaviour
 
     private void Awake()
     {
-        if(PlayerPrefs.HasKey("Current level"))
+        if (PlayerPrefs.HasKey("Current level"))
         {
             level = PlayerPrefs.GetInt("Current level");
         }

@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     private float timerSeconds;
     private Board board;
     private GoalManager goalManager;
+    private ScoreManager scoreManager;
 
     void SetGameType()
     {
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
     {
         board = FindObjectOfType<Board>();
         goalManager = FindObjectOfType<GoalManager>();
+        scoreManager = FindObjectOfType<ScoreManager>();
         SetGameType();
         SetupGame();
     }
@@ -78,6 +80,7 @@ public class GameManager : MonoBehaviour
     public void WinGame()
     {
         WinPanel.SetActive(true);
+        scoreManager.SaveScore();
         board.currentState = GameState.win;
         goalManager.SetupWinPanel();
         currentCounterValue = 0;

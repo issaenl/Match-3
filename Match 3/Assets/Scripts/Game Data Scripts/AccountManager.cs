@@ -22,7 +22,29 @@ public class AccountManager : MonoBehaviour
     public GameObject registrationPanel;
     public GameObject authotizationPanel;
 
+    private int userID;
+
     private string path = "URI=file:accounts.db";
+
+    public static AccountManager Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public int GetUserID()
+    {
+        return userID;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -37,8 +59,10 @@ public class AccountManager : MonoBehaviour
             connection.Open();
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "CREATE TABLE IF NOT EXISTS accounts (id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "name TEXT NOT NULL, password TEXT NOT NULL)";
+                command.CommandText = "CREATE TABLE IF NOT EXISTS accounts (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "name TEXT NOT NULL, " +
+                    "password TEXT NOT NULL)";
                 command.ExecuteNonQuery();
             }          
         }
@@ -82,8 +106,12 @@ public class AccountManager : MonoBehaviour
                     connection.Open();
                     using (var command = connection.CreateCommand())
                     {
-                        command.CommandText = "INSERT INTO accounts (name, password) VALUES ('" + name + "', '" + password + "');";
+                        command.CommandText = "INSERT INTO accounts (name, password) VALUES (@name, @password);";
+                        command.Parameters.AddWithValue("@name", name);
+                        command.Parameters.AddWithValue("@password", password);
                         command.ExecuteNonQuery();
+                        command.CommandText = "SELECT last_insert_rowid();";
+                        userID = Convert.ToInt32(command.ExecuteScalar());
                         errorRegistration.text = "Регистрация успешна!";
                         errorRegistration.color = Color.green;
                         back.SetActive(false);
@@ -115,9 +143,12 @@ public class AccountManager : MonoBehaviour
                     command.Parameters.AddWithValue("@name", loginName);
                     command.Parameters.AddWithValue("@password", loginPassword);
                     int count = Convert.ToInt32(command.ExecuteScalar());
+                    command.CommandText = "SELECT id FROM accounts WHERE name = @name AND password = @password";
+                    var result = command.ExecuteScalar();
 
                     if (count > 0)
                     {
+                        userID = Convert.ToInt32(result);
                         errorAuthenticate.text = "Авторизация успешна!";
                         errorAuthenticate.color = Color.green;
                         back.SetActive(false);

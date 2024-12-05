@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -76,13 +77,6 @@ public class LevelButton : MonoBehaviour
     void ShowLevel()
     {
         levelNumber.text = level.ToString(); 
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ConfirmPanel(int level)

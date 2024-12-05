@@ -1442,9 +1442,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveData:
-    isActive: 
-    highScores: 
-    stars: 
+    isActive: 010000
+    highScores: 000000000000000000000000
+    stars: 000000000000000000000000
 --- !u!1 &1089860589
 GameObject:
   m_ObjectHideFlags: 0
