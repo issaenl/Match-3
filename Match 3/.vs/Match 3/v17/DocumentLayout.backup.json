@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "D:\\\u0423\u041F\\Match-3\\Match 3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|D:\\\u0423\u041F\\Match-3\\Match 3\\assets\\scripts\\game data scripts\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\game data scripts\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|d:\\\u0443\u043F\\match-3\\match 3\\assets\\scripts\\base game\\settingsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\base game\\settingsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|D:\\\u0423\u041F\\Match-3\\Match 3\\assets\\scripts\\base game\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\base game\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|D:\\\u0423\u041F\\Match-3\\Match 3\\assets\\scripts\\base game\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\base game\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|D:\\\u0423\u041F\\Match-3\\Match 3\\assets\\scripts\\game data scripts\\accountmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\game data scripts\\accountmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|d:\\\u0443\u043F\\match-3\\match 3\\assets\\scripts\\ui\\levelbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|D:\\\u0423\u041F\\Match-3\\Match 3\\assets\\scripts\\ui\\levelbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\ui\\levelbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|D:\\\u0423\u041F\\Match-3\\Match 3\\assets\\scripts\\base game\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\base game\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|d:\\\u0443\u043F\\match-3\\match 3\\assets\\scripts\\base game\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\base game\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|d:\\\u0443\u043F\\match-3\\match 3\\assets\\scripts\\base game\\findmatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\base game\\findmatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|D:\\\u0423\u041F\\Match-3\\Match 3\\assets\\scripts\\ui\\confirmpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\ui\\confirmpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|D:\\\u0423\u041F\\Match-3\\Match 3\\assets\\scripts\\game data scripts\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\game data scripts\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|D:\\\u0423\u041F\\Match-3\\Match 3\\assets\\scripts\\base game\\scoremanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\base game\\scoremanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|D:\\\u0423\u041F\\Match-3\\Match 3\\assets\\scripts\\base game\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\base game\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|D:\\\u0423\u041F\\Match-3\\Match 3\\assets\\scripts\\base game\\findmatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\base game\\findmatches.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19F23965-9914-96F7-0626-A5CEFE60362B}|Assembly-CSharp.Player.csproj|D:\\\u0423\u041F\\Match-3\\Match 3\\assets\\scripts\\ui\\backtolevelchoose.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,11 +54,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Board.cs",
               "DocumentMoniker": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Base Game\\Board.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Base Game\\Board.cs",
@@ -59,44 +67,43 @@
               "ViewState": "AgIAACMAAAAAAAAAAAAswD0BAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T13:34:09.527Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FindMatches.cs",
-              "DocumentMoniker": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Base Game\\FindMatches.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Base Game\\FindMatches.cs",
-              "ToolTip": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Base Game\\FindMatches.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Base Game\\FindMatches.cs",
-              "ViewState": "AgIAANcAAAAAAAAAAAAwwPMAAAA3AAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "SettingsManager.cs",
+              "DocumentMoniker": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Base Game\\SettingsManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Base Game\\SettingsManager.cs",
+              "ToolTip": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Base Game\\SettingsManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Base Game\\SettingsManager.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCwAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T20:23:29.52Z",
+              "WhenOpened": "2024-12-06T09:21:51.24Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Base Game\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Base Game\\GameManager.cs",
               "ToolTip": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Base Game\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Base Game\\GameManager.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwDUAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwDUAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T20:15:24.149Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "LevelButton.cs",
               "DocumentMoniker": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\UI\\LevelButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\LevelButton.cs",
               "ToolTip": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\UI\\LevelButton.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\LevelButton.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAqwDIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T06:36:06.089Z",
               "EditorCaption": ""
@@ -104,41 +111,52 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ConfirmPanel.cs",
-              "DocumentMoniker": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\UI\\ConfirmPanel.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\ConfirmPanel.cs",
-              "ToolTip": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\UI\\ConfirmPanel.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\ConfirmPanel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T06:36:05.051Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "GameData.cs",
               "DocumentMoniker": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Game Data Scripts\\GameData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Game Data Scripts\\GameData.cs",
               "ToolTip": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Game Data Scripts\\GameData.cs",
               "RelativeToolTip": "Assets\\Scripts\\Game Data Scripts\\GameData.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAcwF4AAABuAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAQwHAAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T19:05:42.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T19:05:42.1Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AccountManager.cs",
               "DocumentMoniker": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Game Data Scripts\\AccountManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Game Data Scripts\\AccountManager.cs",
               "ToolTip": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Game Data Scripts\\AccountManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Game Data Scripts\\AccountManager.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAYwJkAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwDoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T07:23:20.031Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SoundManager.cs",
+              "DocumentMoniker": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Base Game\\SoundManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Base Game\\SoundManager.cs",
+              "ToolTip": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Base Game\\SoundManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Base Game\\SoundManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T07:59:23.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ConfirmPanel.cs",
+              "DocumentMoniker": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\UI\\ConfirmPanel.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\ConfirmPanel.cs",
+              "ToolTip": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\UI\\ConfirmPanel.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\ConfirmPanel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T06:36:05.051Z"
             },
             {
               "$type": "Document",
@@ -148,14 +166,25 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Base Game\\ScoreManager.cs",
               "ToolTip": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Base Game\\ScoreManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Base Game\\ScoreManager.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T21:07:10.394Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T21:07:10.394Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
+              "Title": "FindMatches.cs",
+              "DocumentMoniker": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Base Game\\FindMatches.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Base Game\\FindMatches.cs",
+              "ToolTip": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\Base Game\\FindMatches.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Base Game\\FindMatches.cs",
+              "ViewState": "AgIAANcAAAAAAAAAAAAwwPMAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T20:23:29.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "BackToLevelChoose.cs",
               "DocumentMoniker": "D:\\\u0423\u041F\\Match-3\\Match 3\\Assets\\Scripts\\UI\\BackToLevelChoose.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\BackToLevelChoose.cs",
@@ -163,8 +192,7 @@
               "RelativeToolTip": "Assets\\Scripts\\UI\\BackToLevelChoose.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T20:48:16.565Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T20:48:16.565Z"
             }
           ]
         },

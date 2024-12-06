@@ -23,4 +23,6 @@ public class MainMenuController : MonoBehaviour
             settingsAnim.SetBool("Out", false);
         }
     }
+
+
 }

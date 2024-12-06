@@ -5,15 +5,48 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public AudioSource[] destroyNoise;
+    public AudioSource[] musicSources;
+    public static SoundManager Instance;
 
-    public void PlayRandomNoise()
+    private void Awake() 
+    { 
+        if (Instance == null) 
+        { 
+            Instance = this; 
+            DontDestroyOnLoad(gameObject); 
+        } 
+        else 
+        { 
+            Destroy(gameObject); 
+        } 
+    }
+    public void SetMusicVolume(float volume)
     {
-        int clipToPaly = Random.Range(0, destroyNoise.Length);
-        destroyNoise[clipToPaly].Play();
+        if (musicSources == null || musicSources.Length == 0)
+        {
+            return;
+        }
+        foreach (AudioSource source in musicSources)
+        {
+            source.volume = volume;
+        }
     }
 
-    private void Awake()
+    public void SetSFXVolume(float volume)
     {
-        DontDestroyOnLoad(gameObject);
+        if (destroyNoise == null || destroyNoise.Length == 0)
+        {
+            return;
+        }
+        foreach (var source in destroyNoise)
+        {
+            source.volume = volume;
+        }
+    }
+
+    public void PlayRandomNoise() 
+    { 
+        int clipToPlay = Random.Range(0, destroyNoise.Length); 
+        destroyNoise[clipToPlay].Play(); 
     }
 }

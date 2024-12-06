@@ -7,6 +7,8 @@ using UnityEngine.UI;
 using UnityEngine.Rendering;
 using System.Text.RegularExpressions;
 using System;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 
 public class AccountManager : MonoBehaviour
@@ -21,6 +23,7 @@ public class AccountManager : MonoBehaviour
     public GameObject back;
     public GameObject registrationPanel;
     public GameObject authotizationPanel;
+    public bool isRegister = false;
 
     private int userID;
 
@@ -50,6 +53,10 @@ public class AccountManager : MonoBehaviour
     void Start()
     {
         CreateTable();
+        if(!isRegister)
+        {
+            back.SetActive(true);
+        }
     }
 
     void CreateTable()
@@ -114,6 +121,7 @@ public class AccountManager : MonoBehaviour
                         userID = Convert.ToInt32(command.ExecuteScalar());
                         errorRegistration.text = "Регистрация успешна!";
                         errorRegistration.color = Color.green;
+                        isRegister = true;
                         back.SetActive(false);
                     }
 
@@ -151,6 +159,7 @@ public class AccountManager : MonoBehaviour
                         userID = Convert.ToInt32(result);
                         errorAuthenticate.text = "Авторизация успешна!";
                         errorAuthenticate.color = Color.green;
+                        isRegister = true;
                         back.SetActive(false);
                     }
                     else
