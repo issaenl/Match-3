@@ -13,20 +13,85 @@ MonoBehaviour:
   m_Name: Level 4
   m_EditorClassIdentifier: 
   width: 12
-  height: 9
-  boardLayout: []
+  height: 10
+  boardLayout:
+  - x: 5
+    y: 2
+    tileKind: 0
+  - x: 6
+    y: 2
+    tileKind: 0
+  - x: 5
+    y: 3
+    tileKind: 0
+  - x: 6
+    y: 3
+    tileKind: 0
+  - x: 3
+    y: 4
+    tileKind: 0
+  - x: 4
+    y: 4
+    tileKind: 0
+  - x: 3
+    y: 5
+    tileKind: 0
+  - x: 4
+    y: 5
+    tileKind: 0
+  - x: 7
+    y: 5
+    tileKind: 0
+  - x: 8
+    y: 5
+    tileKind: 0
+  - x: 7
+    y: 4
+    tileKind: 0
+  - x: 8
+    y: 4
+    tileKind: 0
+  - x: 5
+    y: 6
+    tileKind: 0
+  - x: 6
+    y: 6
+    tileKind: 0
+  - x: 5
+    y: 7
+    tileKind: 0
+  - x: 6
+    y: 7
+    tileKind: 0
+  - x: 5
+    y: 5
+    tileKind: 1
+  - x: 6
+    y: 5
+    tileKind: 1
+  - x: 5
+    y: 4
+    tileKind: 1
+  - x: 6
+    y: 4
+    tileKind: 1
   elements:
-  - {fileID: 8599439006013555726, guid: a021e2d2f4752e948a94caf110df0ce5, type: 3}
+  - {fileID: 2269464831584712457, guid: 0fc6bf9be698f284395725604905e2e8, type: 3}
   - {fileID: 1046101669661386116, guid: 837189d6d0da7124cb987b0db527bf8d, type: 3}
-  - {fileID: 1694824104649858176, guid: a2628a219b2087f40b3158ab9fa970a4, type: 3}
+  - {fileID: 5103031207311998740, guid: 79765c1b4041cbf44904604c2c5146b4, type: 3}
   - {fileID: 8892269494791140773, guid: 23b500c80a8b0e249a9345e1ad621fbd, type: 3}
-  - {fileID: 910219934563409641, guid: b0e36d31a596b4e47ad322cdc22cf82c, type: 3}
-  scoreGoals: e8030000
+  - {fileID: 8596196795645654252, guid: 2086fe5264e9b5e4597d31828dec2c5c, type: 3}
+  - {fileID: 3931517040632305778, guid: 13c372fad333e4d4f856c64fb31f1685, type: 3}
+  scoreGoals: d0070000a00f000070170000
   requirements:
     gameType: 0
-    counterValue: 15
+    counterValue: 30
   levelGoals:
-  - numberNeeded: 10
-    numberCollected: 0
-    goalSrite: {fileID: 21300000, guid: 55119dcd08e8a174187f589d218907db, type: 3}
-    matchValue: Black Element
+  - numberNeeded: 16
+    numberCollected: 16
+    goalSrite: {fileID: 21300000, guid: 591a606f38829e94da6f9745f3fa2464, type: 3}
+    matchValue: Breakable Element
+  - numberNeeded: 30
+    numberCollected: 37
+    goalSrite: {fileID: 21300000, guid: 22dd6e52cce14404d98e6d6f7e971f0f, type: 3}
+    matchValue: Red Element
