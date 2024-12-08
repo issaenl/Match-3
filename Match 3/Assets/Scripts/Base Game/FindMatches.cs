@@ -92,7 +92,8 @@ public class FindMatches : MonoBehaviour
 
     private IEnumerator FindAllMatchesCo()
     {
-        yield return new WaitForSeconds(.2f);
+        //yield return new WaitForSeconds(.2f);
+        yield return 0;
         for (int i = 0; i < board.width; i++)
         {
             for (int j = 0; j < board.height; j++)
@@ -223,11 +224,11 @@ public class FindMatches : MonoBehaviour
         return elements;
     }
 
-    public void CheckBombs()
+    public void CheckBombs(MatchType matchType)
     {
         if(board.currentElement != null)
         {
-            if(board.currentElement.isMatched)
+            if(board.currentElement.isMatched && board.currentElement.tag == matchType.color)
             {
                 board.currentElement.isMatched = false;
                 if((board.currentElement.swipeAngle > -45 && board.currentElement.swipeAngle <= 45)
@@ -240,18 +241,22 @@ public class FindMatches : MonoBehaviour
                     board.currentElement.MakeColumnBomb();
                 }
             }
-        }
-        else if (board.currentElement.otherDot != null)
-        {
-            Element otherElement = board.currentElement.otherDot.GetComponent<Element>();
-            if ((board.currentElement.swipeAngle > -45 && board.currentElement.swipeAngle <= 45)
-                || (board.currentElement.swipeAngle < -135 || board.currentElement.swipeAngle >= 135))
+            else if (board.currentElement.otherDot != null)
             {
-                otherElement.MakeRowBomb();
-            }
-            else
-            {
-                otherElement.MakeColumnBomb();
+                Element otherElement = board.currentElement.otherDot.GetComponent<Element>();
+                if (otherElement.isMatched && otherElement.tag == matchType.color)
+                {
+                    otherElement.isMatched = false;
+                    if ((board.currentElement.swipeAngle > -45 && board.currentElement.swipeAngle <= 45) ||
+                        (board.currentElement.swipeAngle < -135 || board.currentElement.swipeAngle >= 135))
+                    {
+                        otherElement.MakeRowBomb();
+                    }
+                    else
+                    {
+                        otherElement.MakeColumnBomb();
+                    }
+                }
             }
         }
     }

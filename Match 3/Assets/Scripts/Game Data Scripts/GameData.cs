@@ -18,9 +18,9 @@ public class SaveData
 
     public SaveData()
     {
-        isActive = new bool[] { true, false, false };
-        highScores = new int[3];
-        stars = new int[3];
+        isActive = new bool[] { true, false, false, false };
+        highScores = new int[4];
+        stars = new int[4];
     }
 }
 
@@ -101,9 +101,6 @@ public class GameData : MonoBehaviour
                         saveData.isActive = Array.ConvertAll(reader["IsActive"].ToString().Split(','), bool.Parse);
                         saveData.highScores = Array.ConvertAll(reader["HighScores"].ToString().Split(','), int.Parse);
                         saveData.stars = Array.ConvertAll(reader["Stars"].ToString().Split(','), int.Parse);
-                        Debug.Log("Loaded IsActive: " + string.Join(",", saveData.isActive));
-                        Debug.Log("Loaded HighScores: " + string.Join(",", saveData.highScores));
-                        Debug.Log("Loaded Stars: " + string.Join(",", saveData.stars));
                     }
                     else
                     {
@@ -116,6 +113,10 @@ public class GameData : MonoBehaviour
         }
     }
 
+    private void OnApplicationQuit()
+    {
+        Save();
+    }
 
     private void OnDisable()
     {

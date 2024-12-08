@@ -13,8 +13,15 @@ public class BackToLevelChoose : MonoBehaviour
     {
         if (gameData != null)
         {
-            gameData.saveData.isActive[board.level + 1] = true;
-            gameData.Save();
+            if(board.level + 1 < gameData.saveData.isActive.Length)
+            {
+                gameData.saveData.isActive[board.level + 1] = true;
+                gameData.Save();
+            }
+            else
+            {
+                gameData.Save();
+            }
         }
         SceneManager.LoadScene(sceneToLoad);
     }

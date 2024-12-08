@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a306b28cb770c4a9e9b6814f1c3c4f, type: 3}
+  m_Name: Level 4
+  m_EditorClassIdentifier: 
+  width: 12
+  height: 9
+  boardLayout: []
+  elements:
+  - {fileID: 8599439006013555726, guid: a021e2d2f4752e948a94caf110df0ce5, type: 3}
+  - {fileID: 1046101669661386116, guid: 837189d6d0da7124cb987b0db527bf8d, type: 3}
+  - {fileID: 1694824104649858176, guid: a2628a219b2087f40b3158ab9fa970a4, type: 3}
+  - {fileID: 8892269494791140773, guid: 23b500c80a8b0e249a9345e1ad621fbd, type: 3}
+  - {fileID: 910219934563409641, guid: b0e36d31a596b4e47ad322cdc22cf82c, type: 3}
+  scoreGoals: e8030000
+  requirements:
+    gameType: 0
+    counterValue: 15
+  levelGoals:
+  - numberNeeded: 10
+    numberCollected: 0
+    goalSrite: {fileID: 21300000, guid: 55119dcd08e8a174187f589d218907db, type: 3}
+    matchValue: Black Element
