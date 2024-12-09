@@ -21,6 +21,10 @@ TagManager:
   - Color
   - Breakable Element
   - Board
+  - Toggle
+  - Slider
+  - MusicButton
+  - SFXButton
   layers:
   - Default
   - TransparentFX

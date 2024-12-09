@@ -468,7 +468,10 @@ public class Board : MonoBehaviour
             ShuffleBoard();
         }
         yield return new WaitForSeconds(refillDelay);
-        currentState = GameState.move;
+        if(currentState != GameState.pause)
+        {
+            currentState = GameState.move;
+        }
         streakValue = 1;
     }
 
